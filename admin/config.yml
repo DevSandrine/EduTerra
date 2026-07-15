@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: devsandrine/EduSphere
+  repo: devsandrine/EduTerra
   branch: main
 
 media_folder: "images"
