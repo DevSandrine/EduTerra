@@ -1,8 +1,8 @@
 const cours = [
     {
         titre: "Introduction aux Sciences de l'Éducation",
-        categorie: "Sciences de l'éducation",
-        fichier: "introduction-aux-sciences-de-leducation.md"
+        categorie: "sociologie",
+        fichier: "content/cours/introduction-aux-sciences-de-leducation.md"
     }
 ];
 
@@ -10,13 +10,9 @@ const cours = [
 const liste = document.getElementById("liste-cours");
 
 
-liste.innerHTML = "";
-
-
 cours.forEach(c => {
 
     let bloc = document.createElement("article");
-
 
     bloc.innerHTML = `
 
@@ -26,12 +22,11 @@ cours.forEach(c => {
         Catégorie : ${c.categorie}
         </p>
 
-        <a href="lecture.html?cours=${c.fichier}">
+        <a href="lecture.html?cours=${encodeURIComponent(c.fichier)}">
         Lire le cours
         </a>
 
     `;
-
 
     liste.appendChild(bloc);
 
