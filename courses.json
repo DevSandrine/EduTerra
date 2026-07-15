@@ -9,4 +9,10 @@
     "categorie": "psychologie",
     "fichier": "content/cours/psychologie-de-léducation.md"
   }
+
+  {
+  "titre": "Didactique et apprentissage",
+  "categorie": "pédagogie",
+  "fichier": "content/cours/didactique-et-apprentissage.md"
+}
 ]
