@@ -3,5 +3,10 @@
     "titre": "Introduction aux Sciences de l'Éducation",
     "categorie": "sociologie",
     "fichier": "content/cours/introduction-aux-sciences-de-leducation.md"
+  },
+  {
+    "titre": "Psychologie de l'éducation",
+    "categorie": "psychologie",
+    "fichier": "content/cours/psychologie-de-léducation.md"
   }
 ]
