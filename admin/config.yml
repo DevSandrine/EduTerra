@@ -3,6 +3,9 @@ backend:
   repo: devsandrine/EduSphere
   branch: main
 
+media_folder: "images"
+public_folder: "/images"
+
 collections:
   - name: cours
     label: Cours
@@ -10,41 +13,14 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Titre", name: "title", widget: "string"}
-      - {label: "Catégorie", name: "category", widget: "string"}
-      - {label: "Contenu", name: "body", widget: "markdown"}
-
-
-media_folder: "images"
-public_folder: "/images"
-
-
-collections:
-
-  - name: "cours"
-    label: "Cours"
-    folder: "content/cours"
-    create: true
-    slug: "{{slug}}"
-
-    fields:
-
       - label: "Titre"
         name: "title"
         widget: "string"
-
 
       - label: "Catégorie"
         name: "category"
         widget: "string"
 
-
-      - label: "Image"
-        name: "image"
-        widget: "image"
-        required: false
-
-
-      - label: "Contenu du cours"
+      - label: "Contenu"
         name: "body"
         widget: "markdown"
