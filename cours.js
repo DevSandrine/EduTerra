@@ -1,33 +1,38 @@
-const cours = [
-    {
-        titre: "Introduction aux Sciences de l'Éducation",
-        categorie: "sociologie",
-        fichier: "content/cours/introduction-aux-sciences-de-leducation.md"
-    }
-];
-
-
 const liste = document.getElementById("liste-cours");
 
+fetch("courses.json")
+.then(response => response.json())
+.then(cours => {
 
-cours.forEach(c => {
+    liste.innerHTML = "";
 
-    let bloc = document.createElement("article");
+    cours.forEach(c => {
 
-    bloc.innerHTML = `
+        let bloc = document.createElement("article");
 
-        <h3>${c.titre}</h3>
+        bloc.innerHTML = `
+            <h3>${c.titre}</h3>
 
-        <p>
-        Catégorie : ${c.categorie}
-        </p>
+            <p>
+            Catégorie : ${c.categorie}
+            </p>
 
-        <a href="lecture.html?cours=${encodeURIComponent(c.fichier)}">
-        Lire le cours
-        </a>
+            <a href="lecture.html?cours=${encodeURIComponent(c.fichier)}">
+                Lire le cours
+            </a>
+        `;
 
+        liste.appendChild(bloc);
+
+    });
+
+})
+.catch(error => {
+
+    liste.innerHTML = `
+        <p>Erreur de chargement des cours</p>
     `;
 
-    liste.appendChild(bloc);
+    console.log(error);
 
 });
