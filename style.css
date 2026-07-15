@@ -119,3 +119,60 @@ footer {
     padding: 20px;
 
 }
+
+
+/* blocs cours */
+
+#liste-cours {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px;
+
+}
+
+
+#liste-cours article {
+
+    background: white;
+    width: 300px;
+    padding: 25px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+#liste-cours article h3 {
+
+    color: #2e7d32;
+
+}
+
+
+#liste-cours a {
+
+    display: inline-block;
+    margin-top: 15px;
+
+    background: #2e7d32;
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+}
+
+
+#liste-cours a:hover {
+
+    background: #1b5e20;
+
+}
