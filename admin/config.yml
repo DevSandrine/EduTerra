@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: DevSandrine/EduSphere
+  repo: devsandrine/EduSphere
   branch: main
 
 
