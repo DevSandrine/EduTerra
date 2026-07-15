@@ -2,7 +2,7 @@ const cours = [
     {
         titre: "Introduction aux Sciences de l'Éducation",
         categorie: "Sciences de l'éducation",
-        fichier: "content/cours/introduction-aux-sciences-de-l-éducation.md"
+        fichier: "introduction-aux-sciences-de-leducation.md"
     }
 ];
 
