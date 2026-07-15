@@ -26,7 +26,7 @@ cours.forEach(c => {
         Catégorie : ${c.categorie}
         </p>
 
-        <a href="${c.fichier}">
+        <a href="lecture.html?cours=${c.fichier}">
         Lire le cours
         </a>
 
