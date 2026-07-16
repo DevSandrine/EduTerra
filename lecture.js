@@ -28,61 +28,130 @@ fetch(cours)
     let texteCours = parties[2];
 
 
-    let a_retenir = "";
+    function extraire(champ){
 
-    let resume = "";
+        let regex = new RegExp(
+            champ + ":\\s*([\\s\\S]*?)(?=\\n[a-z_]+:|$)"
+        );
 
+        let resultat = infos.match(regex);
 
-    let matchRetenir = infos.match(/a_retenir:\s*\|-\s*([\s\S]*?)\n[a-z_]+:/);
+        if(resultat){
 
-    if(matchRetenir){
-        a_retenir = matchRetenir[1];
+            return resultat[1]
+            .replace(/\|-/g,"")
+            .replace(/-/g,"")
+            .trim();
+
+        }
+
+        return "";
+
     }
 
 
-    let matchResume = infos.match(/resume:\s*\|-\s*([\s\S]*)/);
+    let titre = extraire("title");
+    let semestre = extraire("semestre");
+    let matiere = extraire("matiere");
+    let type = extraire("type");
+    let resume = extraire("resume");
+    let retenir = extraire("a_retenir");
 
-    if(matchResume){
-        resume = matchResume[1];
-    }
+
+    let auteurs = extraire("auteurs");
+
+    let concepts = extraire("concepts");
+
+    let questions = extraire("questions_examen");
 
 
 
     contenu.innerHTML = `
 
-    <div class="fiche">
+
+<div class="fiche">
 
 
-        <div class="bloc resume">
-
-            <h3>📘 Résumé du cours</h3>
-
-            <p>${resume.replace(/\n/g,"<br>")}</p>
-
-        </div>
+<h1>📚 ${titre}</h1>
 
 
+<div class="infos">
 
-        <div class="bloc retenir">
+<p><b>Semestre :</b> ${semestre}</p>
 
-            <h3>⭐ À retenir pour l'examen</h3>
+<p><b>Matière :</b> ${matiere}</p>
 
-            <p>${a_retenir.replace(/\n/g,"<br>")}</p>
+<p><b>Type :</b> ${type}</p>
 
-        </div>
+
+</div>
 
 
 
-        <div class="cours-complet">
+<div class="bloc auteurs">
 
-            ${marked.parse(texteCours)}
+<h3>👤 Auteur(s) important(s)</h3>
 
-        </div>
+<p>${auteurs.replace(/\n/g,"<br>")}</p>
+
+</div>
 
 
-    </div>
 
-    `;
+<div class="bloc concepts">
+
+<h3>🔑 Concepts clés</h3>
+
+<p>${concepts.replace(/\n/g,"<br>")}</p>
+
+</div>
+
+
+
+<div class="bloc resume">
+
+<h3>📘 Résumé du cours</h3>
+
+<p>${resume.replace(/\n/g,"<br>")}</p>
+
+</div>
+
+
+
+<div class="bloc retenir">
+
+<h3>⭐ À retenir pour l'examen</h3>
+
+<p>${retenir.replace(/\n/g,"<br>")}</p>
+
+</div>
+
+
+
+<div class="bloc examen">
+
+<h3>❓ Questions possibles d'examen</h3>
+
+<p>${questions.replace(/\n/g,"<br>")}</p>
+
+</div>
+
+
+
+<div class="cours-complet">
+
+<h2>📖 Cours complet</h2>
+
+${marked.parse(texteCours)}
+
+</div>
+
+
+</div>
+
+
+`;
+
 
 
 })
@@ -90,7 +159,13 @@ fetch(cours)
 
 .catch(error => {
 
-contenu.innerHTML = error;
+contenu.innerHTML = `
+
+<h2>Erreur</h2>
+
+<p>${error}</p>
+
+`;
 
 });
 
