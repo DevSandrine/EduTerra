@@ -176,3 +176,67 @@ footer {
     background: #1b5e20;
 
 }
+
+
+
+
+.fiche {
+    max-width:900px;
+    margin:auto;
+}
+
+
+.infos {
+    background:#f1f5f9;
+    padding:15px;
+    border-radius:10px;
+}
+
+
+.bloc {
+
+    margin:25px 0;
+    padding:20px;
+    border-radius:15px;
+
+}
+
+
+.auteur {
+
+    background:#fef3c7;
+    border-left:8px solid #d97706;
+
+}
+
+
+.definition {
+
+    background:#dbeafe;
+    border-left:8px solid #2563eb;
+
+}
+
+
+.retenir {
+
+    background:#dcfce7;
+    border-left:8px solid #16a34a;
+
+}
+
+
+.examen {
+
+    background:#fee2e2;
+    border-left:8px solid #dc2626;
+
+}
+
+
+.cours {
+
+    background:white;
+    border:1px solid #ddd;
+
+}
