@@ -9,12 +9,16 @@ auteurs:
 concepts:
   - Socialisation scolaire
   - Culture scolaire
-a_retenir: L'école joue un rôle majeur dans la socialisation des
-  individus.  Elle transmet des savoirs, des normes et des valeurs
-  communes.  Selon Pierre Bourdieu, l'école peut renforcer les inégalités
-  sociales  car elle valorise davantage la culture des classes
-  favorisées.  Bernard Lahire montre que les parcours scolaires sont différents
-  selon  les expériences familiales et sociales des élèves.
+a_retenir: >-
+  L'école joue un rôle majeur dans la socialisation des individus.  Elle
+  transmet des savoirs, des normes et des 
+
+
+  valeurs communes.  Selon Pierre Bourdieu, l'école peut renforcer les inégalités sociales  car elle valorise davantage
+
+   la culture des classes favorisées.  Bernard Lahire montre que les parcours scolaires sont différents selon  les
+
+   expériences familiales et sociales des élèves.
 ---
 \## 1. La socialisation scolaireLa socialisation désigne le processus par lequel un individu apprendles normes et les valeurs de la société.À l'école, l'élève apprend :- des connaissances scolaires ;- des règles de vie collective ;- des méthodes de travail ;- des comportements attendus.
 
