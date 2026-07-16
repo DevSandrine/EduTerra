@@ -3,7 +3,7 @@ backend:
   repo: devsandrine/EduTerra
   branch: main
   base_url: https://eduterra.pages.dev
-  auth_endpoint: oauth
+  auth_endpoint: oauth 
 
 media_folder: "images"
 public_folder: "/images"
