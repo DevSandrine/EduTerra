@@ -1,38 +1,96 @@
-const liste = document.getElementById("liste-cours");
-
 fetch("courses.json")
+
 .then(response => response.json())
+
 .then(cours => {
 
-    liste.innerHTML = "";
 
-    cours.forEach(c => {
+const zoneMatieres = document.getElementById("liste-matieres");
+const zoneCours = document.getElementById("liste-cours");
+const titreCours = document.getElementById("titre-cours");
 
-        let bloc = document.createElement("article");
 
-        bloc.innerHTML = `
-            <h3>${c.titre}</h3>
+// récupérer automatiquement toutes les matières
 
-            <p>
-            Catégorie : ${c.categorie}
-            </p>
+const matieres = [...new Set(
+    cours.map(c => c.matiere)
+)];
 
-            <a href="lecture.html?cours=${encodeURIComponent(c.fichier)}">
-                Lire le cours
-            </a>
-        `;
 
-        liste.appendChild(bloc);
+// créer les blocs matières
 
-    });
+matieres.forEach(matiere => {
 
-})
-.catch(error => {
 
-    liste.innerHTML = `
-        <p>Erreur de chargement des cours</p>
+    const bloc = document.createElement("div");
+
+    bloc.className = "bloc-matiere";
+
+
+    bloc.innerHTML = `
+        <h3>${matiere}</h3>
     `;
 
-    console.log(error);
+
+
+    // quand on clique sur une matière
+
+    bloc.onclick = function(){
+
+
+        titreCours.textContent = "📘 " + matiere;
+
+
+        zoneCours.innerHTML = "";
+
+
+        cours
+
+        .filter(c => c.matiere === matiere)
+
+        .forEach(c => {
+
+
+            zoneCours.innerHTML += `
+
+            <article>
+
+                <h3>${c.titre}</h3>
+
+                <p>
+                Semestre : ${c.semestre}
+                </p>
+
+                <p>
+                Type : ${c.type}
+                </p>
+
+
+                <a href="lecture.html?cours=${encodeURIComponent(c.fichier)}">
+                Voir le cours
+                </a>
+
+            </article>
+
+            `;
+
+
+        });
+
+
+    };
+
+
+    zoneMatieres.appendChild(bloc);
+
+
+});
+
+
+})
+
+.catch(error => {
+
+console.error("Erreur chargement cours :", error);
 
 });
