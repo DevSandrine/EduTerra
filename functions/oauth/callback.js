@@ -50,3 +50,5 @@ window.close();
     "Content-Type": "text/html"
   }
 });
+
+}
