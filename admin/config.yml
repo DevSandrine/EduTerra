@@ -7,24 +7,18 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
-
 collections:
-
   - name: "cours"
     label: "Cours"
     folder: "content/cours"
     create: true
     slug: "{{slug}}"
-
     fields:
 
-      # TITRE
       - label: "Titre"
         name: "title"
         widget: "string"
 
-
-      # SEMESTRE
       - label: "Semestre"
         name: "semestre"
         widget: "select"
@@ -32,8 +26,6 @@ collections:
           - "S5"
           - "S6"
 
-
-      # MATIERE
       - label: "Matière"
         name: "matiere"
         widget: "select"
@@ -44,10 +36,7 @@ collections:
           - "Anthropologie"
           - "Évaluation"
           - "TICE"
-          - "Psychanalyse"
 
-
-      # TYPE DE FICHE
       - label: "Type de fiche"
         name: "type"
         widget: "select"
@@ -58,8 +47,6 @@ collections:
           - "Révision examen"
 
 
-
-      # AUTEURS
       - label: "Auteur(s) important(s)"
         name: "auteurs"
         widget: "list"
@@ -70,21 +57,37 @@ collections:
           widget: "string"
 
 
-
-      # CONCEPTS
       - label: "Concepts clés"
         name: "concepts"
         widget: "list"
         required: false
         field:
-
           label: "Concept"
           name: "concept"
           widget: "string"
 
 
+       - label: "À retenir pour l'examen"
+        name: "a_retenir"
+        widget: "markdown"
+        required: false
+        buttons:
+          - bold
+          - italic
+          - bulleted-list
 
-      # RESUME
+
+
+      - label: "Questions possibles d'examen"
+        name: "questions_examen"
+        widget: "list"
+        required: false
+        field:
+          label: "Question"
+          name: "question"
+          widget: "string"
+
+
       - label: "Résumé du cours"
         name: "resume"
         widget: "markdown"
@@ -92,38 +95,5 @@ collections:
         buttons:
           - bold
           - italic
-          - code
-          - link
-          - image
           - bulleted-list
           - numbered-list
-
-
-
-      # A RETENIR
-      - label: "À retenir pour l'examen"
-        name: "a_retenir"
-        widget: "markdown"
-        required: false
-        buttons:
-          - bold
-          - italic
-          - code
-          - link
-          - image
-          - bulleted-list
-          - numbered-list
-
-
-
-      # QUESTIONS EXAMEN
-      - label: "Questions possibles d'examen"
-        name: "questions_examen"
-        widget: "list"
-        required: false
-
-        field:
-
-          label: "Question"
-          name: "question"
-          widget: "string"
