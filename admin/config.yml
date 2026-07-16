@@ -80,7 +80,7 @@ collections:
 
       - label: "À retenir pour l'examen"
         name: "a_retenir"
-        widget: "markdown"
+        widget: "text"
         required: false
 
 
@@ -96,5 +96,5 @@ collections:
 
       - label: "Résumé du cours"
         name: "resume"
-        widget: "markdown"
+        widget: "text"
         required: false
