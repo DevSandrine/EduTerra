@@ -34,10 +34,10 @@ const cours = fichiers.map(file => {
         titre: getValue("title") || file.replace(".md",""),
 
 
-        semestre: getValue("semester") || "S5",
+        semestre: getValue("semestre") || "S5",
 
 
-        matiere: getValue("subject") || "Autre",
+        matiere: getValue("matiere") || "Autre",
 
 
         type: getValue("type") || "Cours",
