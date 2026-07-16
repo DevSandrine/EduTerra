@@ -2,106 +2,69 @@ backend:
   name: github
   repo: devsandrine/EduTerra
   branch: main
-
+  base_url: https://eduterra.pages.dev
 
 media_folder: "images"
 public_folder: "/images"
 
-
-
 collections:
-
-
-  - name: cours
-    label: Fiches de révision
-    folder: content/cours
+  - name: "cours"
+    label: "Cours"
+    folder: "content/cours"
     create: true
     slug: "{{slug}}"
-
-
     fields:
 
-
-      - label: "Titre de la fiche"
+      - label: "Titre"
         name: "title"
         widget: "string"
-
-
 
       - label: "Semestre"
         name: "semestre"
         widget: "select"
         options:
-
           - "S5"
           - "S6"
-
-
 
       - label: "Matière"
         name: "matiere"
         widget: "select"
-
         options:
-
-          - "Psychologie de l'éducation"
-          - "Sociologie de l'éducation"
-          - "Didactique du français"
-          - "Didactique des mathématiques"
-          - "Anthropologie de l'éducation"
-          - "Sociologie des professions"
-          - "Psychanalyse et éducation"
-          - "Évaluation en éducation"
-          - "Technologies éducatives (TICE)"
-          - "Mémoire"
-
-
+          - "Psychologie"
+          - "Sociologie"
+          - "Didactique"
+          - "Anthropologie"
+          - "Évaluation"
+          - "TICE"
 
       - label: "Type de fiche"
         name: "type"
         widget: "select"
-
         options:
-
           - "Cours"
           - "Auteur"
           - "Concept"
           - "Révision examen"
 
 
-
-      - - label: "Auteur(s) important(s)"
-  name: "auteurs"
-  widget: "list"
-  required: false
-  field:
-    label: "Auteur"
-    name: "auteur"
-    widget: "string"
+      - label: "Auteur(s) important(s)"
+        name: "auteurs"
+        widget: "list"
+        required: false
+        field:
+          label: "Auteur"
+          name: "auteur"
+          widget: "string"
 
 
       - label: "Concepts clés"
-  name: "concepts"
-  widget: "list"
-  required: false
-  field:
-    label: "Concept"
-    name: "concept"
-    widget: "string"
-
-
-
-      - label: "Objectifs du cours"
-        name: "objectifs"
-        widget: "markdown"
+        name: "concepts"
+        widget: "list"
         required: false
-
-
-
-      - label: "Résumé du cours"
-        name: "body"
-        widget: "markdown"
-
+        field:
+          label: "Concept"
+          name: "concept"
+          widget: "string"
 
 
       - label: "À retenir pour l'examen"
@@ -110,15 +73,16 @@ collections:
         required: false
 
 
-
       - label: "Questions possibles d'examen"
         name: "questions_examen"
         widget: "list"
         required: false
+        field:
+          label: "Question"
+          name: "question"
+          widget: "string"
 
 
-
-      - label: "Bibliographie"
-        name: "bibliographie"
+      - label: "Résumé du cours"
+        name: "body"
         widget: "markdown"
-        required: false
