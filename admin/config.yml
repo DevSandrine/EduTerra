@@ -92,6 +92,9 @@ collections:
         buttons:
           - bold
           - italic
+          - code
+          - link
+          - image
           - bulleted-list
           - numbered-list
 
@@ -105,6 +108,9 @@ collections:
         buttons:
           - bold
           - italic
+          - code
+          - link
+          - image
           - bulleted-list
           - numbered-list
 
