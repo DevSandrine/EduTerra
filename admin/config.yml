@@ -70,17 +70,24 @@ collections:
 
 
 
-      - label: "Auteur(s) important(s)"
-        name: "auteurs"
-        widget: "list"
-        required: false
-
+      - - label: "Auteur(s) important(s)"
+  name: "auteurs"
+  widget: "list"
+  required: false
+  field:
+    label: "Auteur"
+    name: "auteur"
+    widget: "string"
 
 
       - label: "Concepts clés"
-        name: "concepts"
-        widget: "list"
-        required: false
+  name: "concepts"
+  widget: "list"
+  required: false
+  field:
+    label: "Concept"
+    name: "concept"
+    widget: "string"
 
 
 
