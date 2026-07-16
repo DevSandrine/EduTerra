@@ -37,9 +37,10 @@ collections:
           - "Sociologie"
           - "Didactique"
           - "Anthropologie"
+          - "Psychanalyse"
           - "Évaluation"
           - "TICE"
-          - "Psychanalyse"
+          - "Mémoire"
 
 
       - label: "Type de fiche"
