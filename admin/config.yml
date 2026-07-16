@@ -70,7 +70,6 @@ collections:
       - label: "À retenir pour l'examen"
         name: "a_retenir"
         widget: "markdown"
-        required: false
 
 
       - label: "Questions possibles d'examen"
@@ -84,5 +83,5 @@ collections:
 
 
       - label: "Résumé du cours"
-        name: "body"
+        name: "resume"
         widget: "markdown"
