@@ -3,9 +3,6 @@ backend:
   repo: devsandrine/EduTerra
   branch: main
 
-media_folder: images
-public_folder: /images
-
 collections:
   - name: cours
     label: Cours
