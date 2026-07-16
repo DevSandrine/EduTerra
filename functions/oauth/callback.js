@@ -29,23 +29,19 @@ export async function onRequest(context) {
   const data = await response.json();
 
 
- return new Response(`
+return new Response(`
 <!doctype html>
 <html>
 <body>
 <script>
-(function() {
-  const message = {
-    token: "${data.access_token}"
-  };
+const token = ${JSON.stringify(data.access_token)};
 
-  window.opener.postMessage(
-    "authorization:github:success:" + JSON.stringify(message),
-    window.location.origin
-  );
+window.opener.postMessage(
+  "authorization:github:success:" + token,
+  "*"
+);
 
-  window.close();
-})();
+window.close();
 </script>
 </body>
 </html>
@@ -54,11 +50,3 @@ export async function onRequest(context) {
     "Content-Type": "text/html"
   }
 });
-{
- headers: {
-  "Content-Type": "text/html"
- }
-}
-);
-
-}
