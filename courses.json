@@ -8,11 +8,10 @@
     "titre": "Psychologie de l'éducation",
     "categorie": "psychologie",
     "fichier": "content/cours/psychologie-de-léducation.md"
-  }
-
+  },
   {
-  "titre": "Didactique et apprentissage",
-  "categorie": "pédagogie",
-  "fichier": "content/cours/didactique-et-apprentissage.md"
-}
+    "titre": "Didactique et apprentissage",
+    "categorie": "pédagogie",
+    "fichier": "content/cours/didactique-et-apprentissage.md"
+  }
 ]
