@@ -67,9 +67,15 @@ collections:
           widget: "string"
 
 
-      - label: "À retenir pour l'examen"
+       - label: "À retenir pour l'examen"
         name: "a_retenir"
         widget: "markdown"
+        required: false
+        buttons:
+          - bold
+          - italic
+          - bulleted-list
+
 
 
       - label: "Questions possibles d'examen"
@@ -85,3 +91,9 @@ collections:
       - label: "Résumé du cours"
         name: "resume"
         widget: "markdown"
+        required: false
+        buttons:
+          - bold
+          - italic
+          - bulleted-list
+          - numbered-list
