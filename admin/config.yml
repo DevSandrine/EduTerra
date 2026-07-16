@@ -69,7 +69,7 @@ collections:
 
       - label: "À retenir pour l'examen"
         name: "a_retenir"
-        widget: "text"
+        widget: "markdown"
 
 
       - label: "Questions possibles d'examen"
@@ -84,4 +84,4 @@ collections:
 
       - label: "Résumé du cours"
         name: "resume"
-        widget: "text"
+        widget: "markdown"
