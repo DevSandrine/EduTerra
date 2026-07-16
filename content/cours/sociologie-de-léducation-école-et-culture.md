@@ -15,8 +15,6 @@ a_retenir: L'école joue un rôle majeur dans la socialisation des
   sociales  car elle valorise davantage la culture des classes
   favorisées.  Bernard Lahire montre que les parcours scolaires sont différents
   selon  les expériences familiales et sociales des élèves.
-
-  l
 ---
 \## 1. La socialisation scolaireLa socialisation désigne le processus par lequel un individu apprendles normes et les valeurs de la société.À l'école, l'élève apprend :- des connaissances scolaires ;- des règles de vie collective ;- des méthodes de travail ;- des comportements attendus.
 
