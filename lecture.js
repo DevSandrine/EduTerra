@@ -137,6 +137,13 @@ fetch(cours)
 </div>
 
 
+<div class="bloc cours">
+
+<h2>📖 Contenu du cours</h2>
+
+${marked.parse(cours.body || "")}
+
+</div>
 
 
 
