@@ -121,122 +121,207 @@ footer {
 }
 
 
-/* blocs cours */
+/*bloc cours*/
 
-#liste-cours {
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 30px;
-
-}
+/* ===== PAGE DETAIL COURS ===== */
 
 
-#liste-cours article {
+#contenu-cours {
 
-    background: white;
-    width: 300px;
-    padding: 25px;
-
-    border-radius: 20px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    max-width:1000px;
+    margin:40px auto;
+    padding:20px;
 
 }
-
-
-#liste-cours article h3 {
-
-    color: #2e7d32;
-
-}
-
-
-#liste-cours a {
-
-    display: inline-block;
-    margin-top: 15px;
-
-    background: #2e7d32;
-    color: white;
-
-    padding: 10px 20px;
-
-    border-radius: 10px;
-
-    text-decoration: none;
-
-}
-
-
-#liste-cours a:hover {
-
-    background: #1b5e20;
-
-}
-
 
 
 
 .fiche {
-    max-width:900px;
-    margin:auto;
+
+    background:white;
+    padding:40px;
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+
 }
 
+
+
+.fiche h1 {
+
+    text-align:center;
+    color:#2e7d32;
+    font-size:38px;
+    margin-bottom:35px;
+
+}
+
+
+/* Informations générales */
 
 .infos {
-    background:#f1f5f9;
-    padding:15px;
-    border-radius:10px;
+
+    background:#e8f5e9;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    border-left:8px solid #2e7d32;
+
+    margin-bottom:30px;
+
 }
 
+
+
+/* Tous les blocs */
 
 .bloc {
 
-    margin:25px 0;
-    padding:20px;
-    border-radius:15px;
+    margin:30px 0;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    line-height:1.8;
+
+    font-size:17px;
 
 }
 
 
-.auteur {
 
-    background:#fef3c7;
-    border-left:8px solid #d97706;
+.bloc h3 {
+
+    margin-top:0;
+
+    font-size:24px;
 
 }
 
 
-.definition {
+
+/* auteurs */
+
+.auteurs {
+
+    background:#fff3cd;
+
+    border-left:8px solid #f39c12;
+
+}
+
+
+
+/* concepts */
+
+.concepts {
+
+    background:#ede9fe;
+
+    border-left:8px solid #7c3aed;
+
+}
+
+
+
+/* résumé */
+
+.resume {
 
     background:#dbeafe;
+
     border-left:8px solid #2563eb;
 
 }
 
 
+
+/* à retenir */
+
 .retenir {
 
     background:#dcfce7;
+
     border-left:8px solid #16a34a;
 
 }
 
 
+
+/* questions examen */
+
 .examen {
 
     background:#fee2e2;
+
     border-left:8px solid #dc2626;
 
 }
 
 
-.cours {
 
-    background:white;
+/* cours complet */
+
+.cours-complet {
+
+    background:#fafafa;
+
+    padding:30px;
+
+    border-radius:20px;
+
     border:1px solid #ddd;
+
+    line-height:1.9;
+
+}
+
+
+
+.cours-complet h2 {
+
+    color:#2e7d32;
+
+}
+
+
+
+/* listes */
+
+.fiche ul {
+
+    padding-left:30px;
+
+}
+
+
+.fiche li {
+
+    margin-bottom:10px;
+
+}
+
+
+
+/* mobile */
+
+@media(max-width:700px){
+
+    .fiche{
+
+        padding:20px;
+
+    }
+
+
+    .fiche h1{
+
+        font-size:28px;
+
+    }
 
 }
