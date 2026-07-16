@@ -29,21 +29,31 @@ export async function onRequest(context) {
   const data = await response.json();
 
 
-  return new Response(
-`
-<!DOCTYPE html>
+ return new Response(`
+<!doctype html>
 <html>
 <body>
 <script>
-window.opener.postMessage(
-  "authorization:github:success:${JSON.stringify(data.access_token)}",
-  "*"
-);
-window.close();
+(function() {
+  const message = {
+    token: "${data.access_token}"
+  };
+
+  window.opener.postMessage(
+    "authorization:github:success:" + JSON.stringify(message),
+    window.location.origin
+  );
+
+  window.close();
+})();
 </script>
 </body>
 </html>
-`,
+`, {
+  headers: {
+    "Content-Type": "text/html"
+  }
+});
 {
  headers: {
   "Content-Type": "text/html"
