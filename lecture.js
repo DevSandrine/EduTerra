@@ -1,14 +1,10 @@
-// Récupère le cours dans l'URL
 const params = new URLSearchParams(window.location.search);
 
 const cours = params.get("cours");
 
-
-// Zone d'affichage
 const contenu = document.getElementById("contenu-cours");
 
 
-// Vérification
 if (!cours) {
 
     contenu.innerHTML = "<h2>Aucun cours sélectionné</h2>";
@@ -17,181 +13,76 @@ if (!cours) {
 
 else {
 
-
 fetch(cours)
 
-.then(response => {
-
-    if (!response.ok) {
-
-        throw new Error("Cours introuvable");
-
-    }
-
-    return response.text();
-
-})
-
+.then(response => response.text())
 
 .then(markdown => {
 
 
-    // Sépare les informations du cours et le contenu
-    const parties = markdown.split("---");
+    let parties = markdown.split("---");
 
 
-    const informations = parties[1];
+    let infos = parties[1];
 
-    const texteCours = parties[2];
+    let texteCours = parties[2];
 
 
+    let a_retenir = "";
 
-    // Fonction pour récupérer une valeur simple
-    function recuperer(champ) {
+    let resume = "";
 
-        const ligne = informations.match(
-            new RegExp("^" + champ + ":\\s*(.*)$", "m")
-        );
 
-        return ligne ? ligne[1] : "";
+    let matchRetenir = infos.match(/a_retenir:\s*\|-\s*([\s\S]*?)\n[a-z_]+:/);
 
+    if(matchRetenir){
+        a_retenir = matchRetenir[1];
     }
 
 
+    let matchResume = infos.match(/resume:\s*\|-\s*([\s\S]*)/);
 
-    // Récupération des données
-
-    const titre = recuperer("title");
-
-    const semestre = recuperer("semestre");
-
-    const matiere = recuperer("matiere");
-
-    const type = recuperer("type");
-
-
-
-    // Récupération listes
-
-    function recupererListe(champ){
-
-        const regex = new RegExp(
-            champ + ":[\\s\\S]*?(?=\\n\\w|$)"
-        );
-
-        const resultat = informations.match(regex);
-
-
-        if(!resultat) return [];
-
-
-        return resultat[0]
-        .split("\n")
-        .slice(1)
-        .map(x => x.replace("-", "").trim())
-        .filter(x => x);
-
+    if(matchResume){
+        resume = matchResume[1];
     }
-
-
-
-    const auteurs = recupererListe("auteurs");
-
-    const concepts = recupererListe("concepts");
-
-    const questions = recupererListe("questions_examen");
-
-
-
-    const retenir = recuperer("a_retenir");
 
 
 
     contenu.innerHTML = `
 
+    <div class="fiche">
 
-<h1>${titre}</h1>
 
+        <div class="bloc resume">
 
-<div class="infos">
+            <h3>📘 Résumé du cours</h3>
 
-<p>📚 ${semestre}</p>
+            <p>${resume.replace(/\n/g,"<br>")}</p>
 
-<p>🎓 ${matiere}</p>
-
-<p>📝 ${type}</p>
-
-</div>
+        </div>
 
 
 
-<div class="bloc auteur">
+        <div class="bloc retenir">
 
-<h2>🟨 Auteurs importants</h2>
+            <h3>⭐ À retenir pour l'examen</h3>
 
-<ul>
+            <p>${a_retenir.replace(/\n/g,"<br>")}</p>
 
-${auteurs.map(a => `<li>${a}</li>`).join("")}
-
-</ul>
-
-</div>
+        </div>
 
 
 
+        <div class="cours-complet">
 
-<div class="bloc definition">
+            ${marked.parse(texteCours)}
 
-<h2>🟦 Concepts clés</h2>
-
-<ul>
-
-${concepts.map(c => `<li>${c}</li>`).join("")}
-
-</ul>
-
-</div>
+        </div>
 
 
+    </div>
 
-
-<div class="bloc cours">
-
-<h2>📖 Résumé du cours</h2>
-
-${marked.parse(texteCours)}
-
-</div>
-
-
-
-
-<div class="bloc retenir">
-
-<h2>🟩 À retenir pour l'examen</h2>
-
-<p>${retenir}</p>
-
-</div>
-
-
-
-
-<div class="bloc examen">
-
-<h2>🟥 Questions possibles</h2>
-
-<ul>
-
-${questions.map(q => `<li>${q}</li>`).join("")}
-
-</ul>
-
-</div>
-
-
-`;
-
+    `;
 
 
 })
@@ -199,15 +90,7 @@ ${questions.map(q => `<li>${q}</li>`).join("")}
 
 .catch(error => {
 
-
-contenu.innerHTML = `
-
-<h2>Erreur</h2>
-
-<p>${error}</p>
-
-`;
-
+contenu.innerHTML = error;
 
 });
 
