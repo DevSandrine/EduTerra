@@ -4,21 +4,28 @@ backend:
   branch: main
   base_url: https://eduterra.pages.dev
 
+
 media_folder: "images"
 public_folder: "/images"
 
+
+
 collections:
+
   - name: "cours"
     label: "Cours"
     folder: "content/cours"
     create: true
     slug: "{{slug}}"
 
+
     fields:
+
 
       - label: "Titre"
         name: "title"
         widget: "string"
+
 
 
       - label: "Semestre"
@@ -27,6 +34,7 @@ collections:
         options:
           - "S5"
           - "S6"
+
 
 
       - label: "Matière"
@@ -43,6 +51,7 @@ collections:
           - "Mémoire"
 
 
+
       - label: "Type de fiche"
         name: "type"
         widget: "select"
@@ -51,6 +60,8 @@ collections:
           - "Auteur"
           - "Concept"
           - "Révision examen"
+
+
 
 
       - label: "Auteur(s) important(s)"
@@ -63,6 +74,8 @@ collections:
           widget: "string"
 
 
+
+
       - label: "Concepts clés"
         name: "concepts"
         widget: "list"
@@ -73,16 +86,30 @@ collections:
           widget: "string"
 
 
+
+
       - label: "Image du cours"
         name: "image"
         widget: "image"
         required: false
 
 
+
+
+      - label: "Résumé du cours"
+        name: "resume"
+        widget: "markdown"
+        required: false
+
+
+
+
       - label: "À retenir pour l'examen"
         name: "a_retenir"
-        widget: "text"
+        widget: "markdown"
         required: false
+
+
 
 
       - label: "Questions possibles d'examen"
@@ -95,7 +122,9 @@ collections:
           widget: "string"
 
 
-      - label: "Résumé du cours"
-        name: "resume"
-        widget: "text"
+
+
+      - label: "Contenu du cours"
+        name: "body"
+        widget: "markdown"
         required: false
