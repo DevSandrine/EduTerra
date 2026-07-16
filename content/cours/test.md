@@ -1,24 +1,23 @@
 ---
-title: Test
+title: "Approches psychologiques en évaluation"
 semestre: S5
 matiere: Psychologie
 type: Cours
-a_retenir: >-
-  kdjjef ,dv ,v
-  vkvjnvldb,kmflk;lfsf;m;mqs:dqs:!,d:s;,f;,dnf;;dnglfd,n,nmfdlv,lfd
 
+auteurs:
+  - Rémi Goasdoué
 
-  ,vd;,l;df,v;fdv,fldkdfkjfslmd,,sqljsishkff,dk,d;,;d,
-resume: >-
-  zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+concepts:
+  - Psychologie différentielle
+  - Évaluation scolaire
 
+a_retenir: |
+  L'évaluation ne se limite pas à une note.
+  Elle dépend de facteurs psychologiques et sociaux.
 
-  c,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+resume: |
+  Ce cours présente les liens entre psychologie et pratiques d'évaluation.
 
-
-  c,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,kekodffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+questions_examen:
+  - Expliquez le rôle de la psychologie dans l'évaluation scolaire.
 ---
-
-# Test
-
-Ceci est un test.
