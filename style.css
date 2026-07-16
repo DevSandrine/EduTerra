@@ -300,3 +300,197 @@ footer {
     }
 
 }
+
+
+
+
+
+/* =========================
+   PAGE TOUS LES COURS
+========================= */
+
+
+/* Titre */
+
+section h2 {
+
+    text-align:center;
+    margin:40px 0;
+    color:#2e7d32;
+
+}
+
+
+
+/* =========================
+   BLOCS DES MATIERES
+========================= */
+
+
+#liste-matieres {
+
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    gap:25px;
+
+    padding:40px;
+
+}
+
+
+
+.bloc-matiere {
+
+    background:white;
+
+    height:160px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+    transition:0.3s;
+
+}
+
+
+
+.bloc-matiere:hover {
+
+    transform:translateY(-8px);
+
+    background:#e8f5e9;
+
+}
+
+
+
+.bloc-matiere h3 {
+
+    color:#2e7d32;
+
+    font-size:22px;
+
+}
+
+
+
+/* =========================
+   COURS APRES CLIC
+========================= */
+
+
+#titre-cours {
+
+    margin-top:20px;
+
+}
+
+
+
+#liste-cours {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:25px;
+
+    padding:30px;
+
+}
+
+
+
+#liste-cours article {
+
+    background:white;
+
+    width:300px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+
+#liste-cours article h3 {
+
+    color:#2e7d32;
+
+}
+
+
+
+#liste-cours a {
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    background:#2e7d32;
+
+    color:white;
+
+    padding:10px 20px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+}
+
+
+
+#liste-cours a:hover {
+
+    background:#1b5e20;
+
+}
+
+
+
+/* =========================
+   TELEPHONE
+========================= */
+
+
+@media(max-width:900px){
+
+    #liste-matieres {
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:600px){
+
+    #liste-matieres {
+
+        grid-template-columns:1fr;
+
+    }
+
+}
