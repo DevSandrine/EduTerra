@@ -1,17 +1,81 @@
 [
   {
-    "titre": "Introduction aux Sciences de l'Éducation",
-    "categorie": "sociologie",
-    "fichier": "content/cours/introduction-aux-sciences-de-leducation.md"
+    "titre": "Approches psychologiques en évaluation",
+    "semestre": "S5",
+    "matiere": "Psychologie",
+    "type": "Cours",
+    "fichier": "content/cours/approches-psychologiques-evaluation.md"
   },
+
   {
-    "titre": "Psychologie de l'éducation",
-    "categorie": "psychologie",
-    "fichier": "content/cours/psychologie-de-léducation.md"
+    "titre": "Interactions et apprentissages",
+    "semestre": "S5",
+    "matiere": "Psychologie",
+    "type": "Cours",
+    "fichier": "content/cours/interactions-apprentissages.md"
   },
+
   {
-    "titre": "Didactique et apprentissage",
-    "categorie": "pédagogie",
-    "fichier": "content/cours/didactique-et-apprentissage.md"
+    "titre": "Sociologie de l'éducation : école et culture",
+    "semestre": "S5",
+    "matiere": "Sociologie",
+    "type": "Cours",
+    "fichier": "content/cours/sociologie-education-ecole-culture.md"
+  },
+
+  {
+    "titre": "Didactique du français langue maternelle",
+    "semestre": "S5",
+    "matiere": "Didactique",
+    "type": "Cours",
+    "fichier": "content/cours/didactique-francais.md"
+  },
+
+  {
+    "titre": "Didactique des mathématiques",
+    "semestre": "S5",
+    "matiere": "Didactique",
+    "type": "Cours",
+    "fichier": "content/cours/didactique-mathematiques.md"
+  },
+
+  {
+    "titre": "Anthropologie de l'éducation",
+    "semestre": "S6",
+    "matiere": "Anthropologie",
+    "type": "Cours",
+    "fichier": "content/cours/anthropologie-education.md"
+  },
+
+  {
+    "titre": "Sociologie des professions et formation d'adultes",
+    "semestre": "S6",
+    "matiere": "Sociologie",
+    "type": "Cours",
+    "fichier": "content/cours/sociologie-professions.md"
+  },
+
+  {
+    "titre": "Psychanalyse et éducation",
+    "semestre": "S6",
+    "matiere": "Psychanalyse",
+    "type": "Concept",
+    "fichier": "content/cours/psychanalyse-education.md"
+  },
+
+  {
+    "titre": "Évaluations en éducation : prescriptions et pratiques",
+    "semestre": "S6",
+    "matiere": "Évaluation",
+    "type": "Cours",
+    "fichier": "content/cours/evaluations-education.md"
+  },
+
+  {
+    "titre": "Apprendre avec les TICE",
+    "semestre": "S6",
+    "matiere": "TICE",
+    "type": "Cours",
+    "fichier": "content/cours/tice.md"
   }
 ]
