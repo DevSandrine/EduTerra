@@ -3,8 +3,17 @@ backend:
   repo: devsandrine/EduTerra
   branch: main
 
+media_folder: "images"
+public_folder: "/images"
+
 collections:
-  - name: cours
-    label: Cours
-    folder: content/cours
+  - name: "cours"
+    label: "Cours"
+    folder: "content/cours"
     create: true
+    slug: "{{slug}}"
+
+    fields:
+      - label: "Titre"
+        name: "title"
+        widget: "string"
