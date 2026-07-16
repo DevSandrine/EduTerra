@@ -29,26 +29,40 @@ export async function onRequest(context) {
   const data = await response.json();
 
 
-return new Response(`
+  return new Response(`
 <!doctype html>
 <html>
 <body>
 <script>
-const token = ${JSON.stringify(data.access_token)};
+
+function receiveMessage(event) {
+
+  window.opener.postMessage(
+    "authorization:github:success:" + JSON.stringify({
+      token: "${data.access_token}"
+    }),
+    event.origin
+  );
+
+  window.removeEventListener("message", receiveMessage);
+  window.close();
+
+}
+
+window.addEventListener("message", receiveMessage, false);
 
 window.opener.postMessage(
-  "authorization:github:success:" + token,
+  "authorizing:github",
   "*"
 );
 
-window.close();
 </script>
 </body>
 </html>
 `, {
-  headers: {
-    "Content-Type": "text/html"
-  }
-});
+    headers: {
+      "Content-Type": "text/html"
+    }
+  });
 
 }
