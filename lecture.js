@@ -138,13 +138,6 @@ fetch(cours)
 
 
 
-<div class="cours-complet">
-
-<h2>📖 Cours complet</h2>
-
-${marked.parse(texteCours)}
-
-</div>
 
 
 </div>
