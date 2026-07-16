@@ -7,17 +7,21 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
+
 collections:
+
   - name: "cours"
     label: "Cours"
     folder: "content/cours"
     create: true
     slug: "{{slug}}"
+
     fields:
 
       - label: "Titre"
         name: "title"
         widget: "string"
+
 
       - label: "Semestre"
         name: "semestre"
@@ -25,6 +29,7 @@ collections:
         options:
           - "S5"
           - "S6"
+
 
       - label: "Matière"
         name: "matiere"
@@ -36,6 +41,8 @@ collections:
           - "Anthropologie"
           - "Évaluation"
           - "TICE"
+          - "Psychanalyse"
+
 
       - label: "Type de fiche"
         name: "type"
@@ -45,6 +52,7 @@ collections:
           - "Auteur"
           - "Concept"
           - "Révision examen"
+
 
 
       - label: "Auteur(s) important(s)"
@@ -57,6 +65,7 @@ collections:
           widget: "string"
 
 
+
       - label: "Concepts clés"
         name: "concepts"
         widget: "list"
@@ -67,7 +76,15 @@ collections:
           widget: "string"
 
 
-       - label: "À retenir pour l'examen"
+
+      - label: "Image du cours"
+        name: "image"
+        widget: "image"
+        required: false
+
+
+
+      - label: "À retenir pour l'examen"
         name: "a_retenir"
         widget: "markdown"
         required: false
@@ -75,6 +92,7 @@ collections:
           - bold
           - italic
           - bulleted-list
+          - numbered-list
 
 
 
@@ -86,6 +104,7 @@ collections:
           label: "Question"
           name: "question"
           widget: "string"
+
 
 
       - label: "Résumé du cours"
