@@ -8,8 +8,6 @@ auteurs:
 concepts:
   - " Approches psychologiques en évaluation"
 a_retenir: |-
-  
-
   \- L'évaluation ne se limite pas à une note.
 
   \- Elle dépend de facteurs psychologiques et sociaux.
