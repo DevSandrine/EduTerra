@@ -9,7 +9,7 @@ auteurs:
 concepts:
   - Socialisation scolaire
   - Culture scolaire
-a_retenir: |-
+a_retenir: 
   L'école joue un rôle majeur dans la socialisation des
   individus.  Elle transmet des savoirs, des normes et des valeurs
   communes.  Selon Pierre Bourdieu, l'école peut renforcer les inégalités
