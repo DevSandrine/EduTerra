@@ -31,23 +31,15 @@ fetch(cours)
 function extraire(champ){
 
     let regex = new RegExp(
-        "^" + champ + ":\\s*(?:\\|\\s*)?\\n?([\\s\\S]*?)(?=\\n[a-zA-Z_]+:|$)",
+        "^" + champ + ":\\s*(?:\\|)?\\s*\\n?([\\s\\S]*?)(?=\\n[a-zA-Z_]+:|$)",
         "m"
     );
 
     let resultat = infos.match(regex);
 
-    if(resultat){
-
-        return resultat[1]
-        .trim();
-
-    }
-
-    return "";
+    return resultat ? resultat[1].trim() : "";
 
 }
-
 
     let titre = extraire("title");
     let semestre = extraire("semestre");
