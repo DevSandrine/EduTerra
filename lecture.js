@@ -56,6 +56,7 @@ fetch(cours)
     let type = extraire("type");
     let resume = extraire("resume");
     let retenir = extraire("a_retenir");
+    let image = extraire("image");
 
 
     let auteurs = extraire("auteurs");
@@ -105,6 +106,18 @@ fetch(cours)
 <p>${concepts.replace(/\n/g,"<br>")}</p>
 
 </div>
+
+${image ? `
+
+<div class="bloc image-cours">
+
+<h3>🖼️ Image du cours</h3>
+
+<img src="${image}" alt="${titre}">
+
+</div>
+
+` : ""}
 
 
 
