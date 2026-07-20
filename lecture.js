@@ -28,16 +28,24 @@ fetch(cours)
     let texteCours = parties[2];
 
 
-    function extraire(champ){
+function extraire(champ){
 
     let regex = new RegExp(
-        "^" + champ + ":\\s*(.*)$",
-        "m"
+        "^" + champ + ":\\s*(.*?)(?=\\n[a-z_]+:|$)",
+        "ms"
     );
 
     let resultat = infos.match(regex);
 
-    return resultat ? resultat[1].trim() : "";
+    if(resultat){
+
+        return resultat[1]
+        .replace(/^\\|/,"")
+        .trim();
+
+    }
+
+    return "";
 
 }
 
