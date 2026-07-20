@@ -31,8 +31,8 @@ fetch(cours)
 function extraire(champ){
 
     let regex = new RegExp(
-        "^" + champ + ":\\s*(.*?)(?=\\n[a-z_]+:|$)",
-        "ms"
+        "^" + champ + ":\\s*(?:\\|\\s*)?\\n?([\\s\\S]*?)(?=\\n[a-zA-Z_]+:|$)",
+        "m"
     );
 
     let resultat = infos.match(regex);
@@ -40,7 +40,6 @@ function extraire(champ){
     if(resultat){
 
         return resultat[1]
-        .replace(/^\\|/,"")
         .trim();
 
     }
