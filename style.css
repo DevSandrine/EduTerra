@@ -204,6 +204,34 @@ footer {
 
 
 
+/* image du cours dans la fiche */
+
+.image-cours {
+
+    background:#f0fdf4;
+
+    border-left:8px solid #2e7d32;
+
+}
+
+
+.image-cours img {
+
+    display:block;
+
+    max-width:100%;
+
+    max-height:350px;
+
+    margin:20px auto 0;
+
+    border-radius:15px;
+
+}
+
+
+
+
 /* auteurs */
 
 .auteurs {
