@@ -5,6 +5,12 @@ fetch("courses.json")
 .then(cours => {
 
 
+const niveauPage = document.body.dataset.niveau;
+
+
+cours = cours.filter(c => c.niveau === niveauPage);
+
+
 const zoneMatieres = document.getElementById("liste-matieres");
 const zoneCours = document.getElementById("liste-cours");
 const titreCours = document.getElementById("titre-cours");
