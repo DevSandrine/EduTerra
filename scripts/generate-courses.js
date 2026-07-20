@@ -36,6 +36,7 @@ const cours = fichiers.map(file => {
 
         semestre: getValue("semestre") || "S5",
 
+        niveau: getValue("niveau") || "L3",
 
         matiere: getValue("matiere") || "Autre",
 
