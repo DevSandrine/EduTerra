@@ -30,24 +30,16 @@ fetch(cours)
 
     function extraire(champ){
 
-        let regex = new RegExp(
-            champ + ":\\s*([\\s\\S]*?)(?=\\n[a-z_]+:|$)"
-        );
+    let regex = new RegExp(
+        "^" + champ + ":\\s*(.*)$",
+        "m"
+    );
 
-        let resultat = infos.match(regex);
+    let resultat = infos.match(regex);
 
-        if(resultat){
+    return resultat ? resultat[1].trim() : "";
 
-            return resultat[1]
-            .replace(/\|-/g,"")
-            .replace(/-/g,"")
-            .trim();
-
-        }
-
-        return "";
-
-    }
+}
 
 
     let titre = extraire("title");
