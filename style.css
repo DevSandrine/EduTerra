@@ -580,3 +580,47 @@ section h2 {
     background:#1b5e20;
 
 }
+
+
+
+/* programme */ 
+
+
+.programme {
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:40px;
+
+}
+
+
+.bloc-programme {
+
+    background:white;
+
+    margin:30px 0;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+.bloc-programme h3 {
+
+    color:#2e7d32;
+
+}
+
+
+.bloc-programme li {
+
+    margin:10px 0;
+
+}
