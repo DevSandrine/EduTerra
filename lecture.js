@@ -29,31 +29,69 @@ fetch(cours)
 
     function extraire(champ){
 
-
-        let regex = new RegExp(
-
-            "^" + champ + ":\\s*(?:\\|[-+]?\\s*)?\\n?([\\s\\S]*?)(?=\\n[a-zA-Z_]+:|$)",
-
-            "m"
-
-        );
+    let ligneSimple = new RegExp(
+        "^" + champ + ":\\s*(.+)$",
+        "m"
+    );
 
 
-        let resultat = infos.match(regex);
+    let simple = infos.match(ligneSimple);
 
 
-        if(resultat){
+    // Cas texte simple
+    if(simple && !simple[1].startsWith("|")){
 
-            return resultat[1].trim();
+        return simple[1].trim();
 
-        }
+    }
 
+
+
+    // Cas bloc YAML |-
+    let debut = infos.indexOf(champ + ":");
+
+
+    if(debut === -1){
 
         return "";
 
     }
 
 
+    let apres = infos.substring(debut);
+
+
+    let lignes = apres.split("\n");
+
+
+    lignes.shift();
+
+
+
+    let resultat = [];
+
+
+    for(let ligne of lignes){
+
+
+        if(/^[a-zA-Z_]+:/.test(ligne)){
+
+            break;
+
+        }
+
+
+        resultat.push(ligne);
+
+    }
+
+
+    return resultat
+        .join("\n")
+        .replace(/^\s*\|\-?\s*/,"")
+        .trim();
+
+}
 
     let titre = extraire("title");
 
