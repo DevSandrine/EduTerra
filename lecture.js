@@ -13,6 +13,7 @@ if (!cours) {
 
 else {
 
+
 fetch(cours)
 
 .then(response => response.text())
@@ -25,29 +26,49 @@ fetch(cours)
 
     let infos = parties[1];
 
-    let texteCours = parties[2];
+
+    function extraire(champ){
 
 
-function extraire(champ){
+        let regex = new RegExp(
 
-    let regex = new RegExp(
-        "^" + champ + ":\\s*(?:\\|)?\\s*\\n?([\\s\\S]*?)(?=\\n[a-zA-Z_]+:|$)",
-        "m"
-    );
+            "^" + champ + ":\\s*(?:\\|[-+]?\\s*)?\\n?([\\s\\S]*?)(?=\\n[a-zA-Z_]+:|$)",
 
-    let resultat = infos.match(regex);
+            "m"
 
-    return resultat ? resultat[1].trim() : "";
+        );
 
-}
+
+        let resultat = infos.match(regex);
+
+
+        if(resultat){
+
+            return resultat[1].trim();
+
+        }
+
+
+        return "";
+
+    }
+
+
 
     let titre = extraire("title");
+
     let semestre = extraire("semestre");
+
     let matiere = extraire("matiere");
+
     let type = extraire("type");
-    let resume = extraire("resume");
-    let retenir = extraire("a_retenir");
+
     let image = extraire("image");
+
+
+    let resume = extraire("resume");
+
+    let retenir = extraire("a_retenir");
 
 
     let auteurs = extraire("auteurs");
@@ -58,20 +79,41 @@ function extraire(champ){
 
 
 
+
+
+    // TEST CONSOLE
+
+    console.log("IMAGE :", image);
+
+    console.log("RESUME :", resume);
+
+    console.log("A RETENIR :", retenir);
+
+
+
+
+
     contenu.innerHTML = `
+
 
 
 <div class="fiche">
 
 
+
 <h1>📚 ${titre}</h1>
+
+
 
 
 <div class="infos">
 
+
 <p><b>Semestre :</b> ${semestre}</p>
 
+
 <p><b>Matière :</b> ${matiere}</p>
+
 
 <p><b>Type :</b> ${type}</p>
 
@@ -80,23 +122,7 @@ function extraire(champ){
 
 
 
-<div class="bloc auteurs">
 
-<h3>👤 Auteur(s) important(s)</h3>
-
-<p>${auteurs.replace(/\n/g,"<br>")}</p>
-
-</div>
-
-
-
-<div class="bloc concepts">
-
-<h3>🔑 Concepts clés</h3>
-
-<p>${concepts.replace(/\n/g,"<br>")}</p>
-
-</div>
 
 ${image ? `
 
@@ -112,40 +138,91 @@ ${image ? `
 
 
 
+
+
+<div class="bloc auteurs">
+
+
+<h3>👤 Auteur(s) important(s)</h3>
+
+
+<p>${(auteurs || "").replace(/\n/g,"<br>")}</p>
+
+
+</div>
+
+
+
+
+
+<div class="bloc concepts">
+
+
+<h3>🔑 Concepts clés</h3>
+
+
+<p>${(concepts || "").replace(/\n/g,"<br>")}</p>
+
+
+</div>
+
+
+
+
+
+
 <div class="bloc resume">
+
 
 <h3>📘 Résumé du cours</h3>
 
-<p>${resume.replace(/\n/g,"<br>")}</p>
+
+<p>${(resume || "").replace(/\n/g,"<br>")}</p>
+
 
 </div>
+
+
+
+
 
 
 
 <div class="bloc retenir">
 
+
 <h3>⭐ À retenir pour l'examen</h3>
 
-<p>${retenir.replace(/\n/g,"<br>")}</p>
+
+<p>${(retenir || "").replace(/\n/g,"<br>")}</p>
+
 
 </div>
+
+
+
+
 
 
 
 <div class="bloc examen">
 
+
 <h3>❓ Questions possibles d'examen</h3>
 
-<p>${questions.replace(/\n/g,"<br>")}</p>
 
-</div>
-
-
-
-
+<p>${(questions || "").replace(/\n/g,"<br>")}</p>
 
 
 </div>
+
+
+
+
+
+
+</div>
+
 
 
 `;
@@ -157,13 +234,17 @@ ${image ? `
 
 .catch(error => {
 
+
 contenu.innerHTML = `
+
 
 <h2>Erreur</h2>
 
 <p>${error}</p>
 
+
 `;
+
 
 });
 
