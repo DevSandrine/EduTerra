@@ -34,6 +34,15 @@ collections:
         options:
           - "S5"
           - "S6"
+          
+
+      - label: "Niveau"
+        name: "niveau"
+        widget: "select"
+        options:
+          - "L3"
+          - "M1"
+          - "M2"   
 
 
 
